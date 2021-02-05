@@ -22,7 +22,20 @@ export class AppComponent {
    * @param link 
    */
  addArticle(title:HTMLInputElement,link:HTMLInputElement){
-   console.log(`title is ${title.value} and Link is ${link.value}`)
+   this.articles.push(new Article(title.value,link.value,0));
+   title.value='';
+   link.value='';
+   return false;
+
    
  }
+
+
+ /**
+  * Sort the articles
+  */
+
+  sortArticles():Article[] {
+    return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);
+  }
 }
