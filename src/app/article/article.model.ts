@@ -10,15 +10,15 @@ export class Article {
   }
 
   voteUp(): void {
-    //   if(this.votes > 0){
+      if(this.votes > 0){
           this.votes += 1;
-    //   }
+      }
   }
 
   voteDown(): void {
-    // if(this.votes > 0){
+    if(this.votes > 0){
         this.votes -= 1;
-    // }
+    }
   }
 
   // domain() is a utility function that extracts
