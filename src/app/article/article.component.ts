@@ -7,10 +7,10 @@ import { Article } from "./article.model";
 })
 export class ArticleComponent implements OnInit {
   @HostBinding('attr.class') cssClass = 'row';
-
+  art:Article;
   @Input() article:Article 
-
   constructor() { 
+this.art=new Article('hello','lulu');
 
     
   }

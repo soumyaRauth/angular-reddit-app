@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Article } from './article/article.model';
+import { TestClass } from './test-class.model';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,24 @@ import { Article } from './article/article.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   articles:Array<Article>
+  ageCalc:TestClass;
+
   constructor(){
+    this.ageCalc=new TestClass(20,30);
+    console.log("Age Calculating");
+    console.log(this.ageCalc.ageAfterYears());
+    
     this.articles=[
       new Article('Angular','http://angular.io',15),
       new Article('Angular','http://angular.io',9),
       new Article('Angular','http://angular.io',20),
      ]
   }
+
+
+
 
   /**
    * 
@@ -27,7 +38,6 @@ export class AppComponent {
    link.value='';
    return false;
 
-   
  }
 
 
